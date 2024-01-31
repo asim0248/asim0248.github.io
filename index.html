@@ -7,9 +7,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Asim Saeed</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+    <style>
+        * {
+
+    font-family:"Ruluko";
+
+}
+main{
+    background: #447878 !important;
+    text-align: center;
+    padding: 150px 20px !important;
+}
+h3 {
+    margin: 20px;
+    color:white;
+}
+
+#countDiv {
+    color:white;
+    display:inline-block;
+    font-size:30px;
+}
+
+#countDiv > div {
+    padding:10px;
+    background-color:#38556A;
+    border-radius: 30% 3%;
+    display:inline-block;
+}
+
+#countDiv div > span {
+    padding:15px;
+    background-color:#4C6983;
+    border-radius: 30% 3%;
+    display: inline-block;
+    transition:all 2s;
+}
+
+#countDiv div > span:hover {
+    transform:scale(2)
+}
+
+.smallText{
+    font-weight:900;
+	padding-top: 5px;
+	font-size: 16px;
+}
+    </style>
 </head>
 
 <body>
+     <h3>Countdown By Pure Javascript</h3>
+    <p id='num'></p>
+<div id='countDiv'>
+    <div>
+        <span class='days'></span>
+        <div class='smallText'>Days</div>
+    </div>
+    <div>
+        <span class='hours'></span>
+        <div class='smallText'>Hours</div>
+    </div>
+    <div>
+        <span class='minutes'></span>
+        <div class='smallText'>Minutes</div>
+    </div>
+    <div>
+        <span class='seconds'></span>
+        <div class='smallText'>Seconds</div>
+    </div>
     
+    </div>
+    <script>
+        function timingCalc(endtime) {
+    'use strict';
+    
+    var timeTotal = Date.parse(endtime) - Date.parse(new Date()),
+        timeSeconds = Math.floor((timeTotal / 1000) % 60),
+        timeMinutes = Math.floor((timeTotal / 1000 / 60) % 60),
+        timeHours = Math.floor((timeTotal / (1000 * 60 * 60)) % 24),
+        timeDays = Math.floor(timeTotal / (1000 * 60 * 60 * 24));
+    
+    return {
+        'total': timeTotal,
+        'seconds': timeSeconds,
+        'minutes': timeMinutes,
+        'hours': timeHours,
+        'days': timeDays
+    };
+    
+}
+
+var textTest = String.fromCharCode(65, 108, 97, 97, 65, 104, 109, 101, 100);
+document.getElementById('num').innerHTML = textTest;
+
+function installCalc(id, endtime) {
+    'use strict';
+    
+    var calc = document.getElementById(id),
+        daySpan = calc.querySelector(".days"),
+        hourSpan = calc.querySelector(".hours"),
+        minSpan = calc.querySelector(".minutes"),
+        secSpan = calc.querySelector(".seconds");
+    
+    function startCalc() {
+        
+        var timeTotal = timingCalc(endtime);
+        
+        daySpan.innerHTML = timeTotal.days;
+        hourSpan.innerHTML = ("0" + timeTotal.hours).slice(-2);
+        minSpan.innerHTML = ("0" + timeTotal.minutes).slice(-2);
+        secSpan.innerHTML = ("0" + timeTotal.seconds).slice(-2);
+        
+        if (timeTotal.total <= 0) {
+            
+            clearInterval(timingNow);
+            
+        }
+        
+    }
+    startCalc();
+    var timingNow = setInterval(startCalc, 1000);
+}
+
+var DeadLine = new Date(Date.parse(new Date()) + 60 * 24 * 60 * 60 * 1000);
+installCalc("countDiv", DeadLine);
+    </script>
 </body>
 </html>
