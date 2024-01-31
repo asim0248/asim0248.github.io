@@ -8,130 +8,161 @@
     <title>Home | Asim Saeed</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
     <style>
-        * {
-
-    font-family:"Ruluko";
-
-}
-main{
-    background: #447878 !important;
-    text-align: center;
-    padding: 150px 20px !important;
-}
-h3 {
-    margin: 20px;
-    color:white;
+       html {
+  box-sizing: border-box;
 }
 
-#countDiv {
-    color:white;
-    display:inline-block;
-    font-size:30px;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-#countDiv > div {
-    padding:10px;
-    background-color:#38556A;
-    border-radius: 30% 3%;
-    display:inline-block;
+html,
+body {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
 }
 
-#countDiv div > span {
-    padding:15px;
-    background-color:#4C6983;
-    border-radius: 30% 3%;
-    display: inline-block;
-    transition:all 2s;
+ul#countdown {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  margin: 0 auto;
+  padding: 15px 0 20px 0;
+  color: #fff;
+  border: 1px solid #adafb2;
+  border-width: 1px 0;
+  overflow: hidden;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
 }
-
-#countDiv div > span:hover {
-    transform:scale(2)
+ul#countdown li {
+  margin: 0 -3px 0 0;
+  padding: 0;
+  display: inline-block;
+  width: 25%;
+  font-size: 72px;
+  font-size: 6vw;
+  text-align: center;
 }
-
-.smallText{
-    font-weight:900;
-	padding-top: 5px;
-	font-size: 16px;
+ul#countdown li .label {
+  color: #adafb2;
+  font-size: 18px;
+  font-size: 1.5vw;
+  text-transform: uppercase;
 }
     </style>
 </head>
 
 <body>
-     <h3>Countdown By Pure Javascript</h3>
-    <p id='num'></p>
-<div id='countDiv'>
-    <div>
-        <span class='days'></span>
-        <div class='smallText'>Days</div>
-    </div>
-    <div>
-        <span class='hours'></span>
-        <div class='smallText'>Hours</div>
-    </div>
-    <div>
-        <span class='minutes'></span>
-        <div class='smallText'>Minutes</div>
-    </div>
-    <div>
-        <span class='seconds'></span>
-        <div class='smallText'>Seconds</div>
-    </div>
-    
-    </div>
+     <ul id="countdown">
+  <li id="days">
+    <div class="number">00</div>
+    <div class="label">Days</div>
+  </li>
+  <li id="hours">
+    <div class="number">00</div>
+    <div class="label">Hours</div>
+  </li>
+  <li id="minutes">
+    <div class="number">00</div>
+    <div class="label">Minutes</div>
+  </li>
+  <li id="seconds">
+    <div class="number">00</div>
+    <div class="label">Seconds</div>
+  </li>
+</ul>
     <script>
-        function timingCalc(endtime) {
-    'use strict';
-    
-    var timeTotal = Date.parse(endtime) - Date.parse(new Date()),
-        timeSeconds = Math.floor((timeTotal / 1000) % 60),
-        timeMinutes = Math.floor((timeTotal / 1000 / 60) % 60),
-        timeHours = Math.floor((timeTotal / (1000 * 60 * 60)) % 24),
-        timeDays = Math.floor(timeTotal / (1000 * 60 * 60 * 24));
-    
-    return {
-        'total': timeTotal,
-        'seconds': timeSeconds,
-        'minutes': timeMinutes,
-        'hours': timeHours,
-        'days': timeDays
-    };
-    
+        /* --------------------------
+ * GLOBAL VARS
+ * -------------------------- */
+// The date you want to count down to
+var targetDate = new Date("2024/2/08 00:00:00");   
+
+// Other date related variables
+var days;
+var hrs;
+var min;
+var sec;
+
+/* --------------------------
+ * ON DOCUMENT LOAD
+ * -------------------------- */
+$(function() {
+   // Calculate time until launch date
+   timeToLaunch();
+  // Transition the current countdown from 0 
+  numberTransition('#days .number', days, 1000, 'easeOutQuad');
+  numberTransition('#hours .number', hrs, 1000, 'easeOutQuad');
+  numberTransition('#minutes .number', min, 1000, 'easeOutQuad');
+  numberTransition('#seconds .number', sec, 1000, 'easeOutQuad');
+  // Begin Countdown
+  setTimeout(countDownTimer,1001);
+});
+
+/* --------------------------
+ * FIGURE OUT THE AMOUNT OF 
+   TIME LEFT BEFORE LAUNCH
+ * -------------------------- */
+function timeToLaunch(){
+    // Get the current date
+    var currentDate = new Date();
+
+    // Find the difference between dates
+    var diff = (currentDate - targetDate)/1000;
+    var diff = Math.abs(Math.floor(diff));  
+
+    // Check number of days until target
+    days = Math.floor(diff/(24*60*60));
+    sec = diff - days * 24*60*60;
+
+    // Check number of hours until target
+    hrs = Math.floor(sec/(60*60));
+    sec = sec - hrs * 60*60;
+
+    // Check number of minutes until target
+    min = Math.floor(sec/(60));
+    sec = sec - min * 60;
 }
 
-var textTest = String.fromCharCode(65, 108, 97, 97, 65, 104, 109, 101, 100);
-document.getElementById('num').innerHTML = textTest;
-
-function installCalc(id, endtime) {
-    'use strict';
+/* --------------------------
+ * DISPLAY THE CURRENT 
+   COUNT TO LAUNCH
+ * -------------------------- */
+function countDownTimer(){ 
     
-    var calc = document.getElementById(id),
-        daySpan = calc.querySelector(".days"),
-        hourSpan = calc.querySelector(".hours"),
-        minSpan = calc.querySelector(".minutes"),
-        secSpan = calc.querySelector(".seconds");
+    // Figure out the time to launch
+    timeToLaunch();
     
-    function startCalc() {
-        
-        var timeTotal = timingCalc(endtime);
-        
-        daySpan.innerHTML = timeTotal.days;
-        hourSpan.innerHTML = ("0" + timeTotal.hours).slice(-2);
-        minSpan.innerHTML = ("0" + timeTotal.minutes).slice(-2);
-        secSpan.innerHTML = ("0" + timeTotal.seconds).slice(-2);
-        
-        if (timeTotal.total <= 0) {
-            
-            clearInterval(timingNow);
-            
-        }
-        
-    }
-    startCalc();
-    var timingNow = setInterval(startCalc, 1000);
+    // Write to countdown component
+    $( "#days .number" ).text(days);
+    $( "#hours .number" ).text(hrs);
+    $( "#minutes .number" ).text(min);
+    $( "#seconds .number" ).text(sec);
+    
+    // Repeat the check every second
+    setTimeout(countDownTimer,1000);
 }
 
-var DeadLine = new Date(Date.parse(new Date()) + 60 * 24 * 60 * 60 * 1000);
-installCalc("countDiv", DeadLine);
+/* --------------------------
+ * TRANSITION NUMBERS FROM 0
+   TO CURRENT TIME UNTIL LAUNCH
+ * -------------------------- */
+function numberTransition(id, endPoint, transitionDuration, transitionEase){
+  // Transition numbers from 0 to the final number
+  $({numberCount: $(id).text()}).animate({numberCount: endPoint}, {
+      duration: transitionDuration,
+      easing:transitionEase,
+      step: function() {
+        $(id).text(Math.floor(this.numberCount));
+      },
+      complete: function() {
+        $(id).text(this.numberCount);
+      }
+   }); 
+};
     </script>
 </body>
 </html>
