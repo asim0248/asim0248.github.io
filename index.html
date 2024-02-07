@@ -1,417 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Asim Saeed</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
-    <style>
-        body {
-  background-color: #f2f1ed;
-}
+    <title>Crafting Digital Experiences: Asim's Web Development Portfolio</title>
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
 
-.wrap {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 310px;
-}
+    <!-- libraries & plugins -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendor/font_awesome/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/vendor/splide/splide.min.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
-a {
-  text-decoration: none;
-  color: #1a1a1a;
-}
-
-h1 {
-  margin-bottom: 60px;
-  text-align: center;
-  font: 300 2.25em "Lato";
-  text-transform: uppercase;
-}
-h1 strong {
-  font-weight: 400;
-  color: #ea4c4c;
-}
-
-h2 {
-  margin-bottom: 80px;
-  text-align: center;
-  font: 300 0.7em "Lato";
-  text-transform: uppercase;
-}
-h2 strong {
-  font-weight: 400;
-}
-
-.countdown {
-  width: 720px;
-  margin: 0 auto;
-}
-.countdown .bloc-time {
-  float: left;
-  margin-right: 45px;
-  text-align: center;
-}
-.countdown .bloc-time:last-child {
-  margin-right: 0;
-}
-.countdown .count-title {
-  display: block;
-  margin-bottom: 15px;
-  font: normal 0.94em "Lato";
-  color: #1a1a1a;
-  text-transform: uppercase;
-}
-.countdown .figure {
-  position: relative;
-  float: left;
-  height: 110px;
-  width: 100px;
-  margin-right: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
-  -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
-}
-.countdown .figure:last-child {
-  margin-right: 0;
-}
-.countdown .figure > span {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  font: normal 5.94em/107px "Lato";
-  font-weight: 700;
-  color: #de4848;
-}
-.countdown .figure .top:after, .countdown .figure .bottom-back:after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.countdown .figure .top {
-  z-index: 3;
-  background-color: #f7f7f7;
-  transform-origin: 50% 100%;
-  -webkit-transform-origin: 50% 100%;
-  -moz-border-radius-topleft: 10px;
-  -webkit-border-top-left-radius: 10px;
-  border-top-left-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  -webkit-border-top-right-radius: 10px;
-  border-top-right-radius: 10px;
-  -moz-transform: perspective(200px);
-  -ms-transform: perspective(200px);
-  -webkit-transform: perspective(200px);
-  transform: perspective(200px);
-}
-.countdown .figure .bottom {
-  z-index: 1;
-}
-.countdown .figure .bottom:before {
-  content: "";
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-color: rgba(0, 0, 0, 0.02);
-}
-.countdown .figure .bottom-back {
-  z-index: 2;
-  top: 0;
-  height: 50%;
-  overflow: hidden;
-  background-color: #f7f7f7;
-  -moz-border-radius-topleft: 10px;
-  -webkit-border-top-left-radius: 10px;
-  border-top-left-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  -webkit-border-top-right-radius: 10px;
-  border-top-right-radius: 10px;
-}
-.countdown .figure .bottom-back span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-.countdown .figure .top, .countdown .figure .top-back {
-  height: 50%;
-  overflow: hidden;
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.countdown .figure .top-back {
-  z-index: 4;
-  bottom: 0;
-  background-color: #fff;
-  -webkit-transform-origin: 50% 0;
-  transform-origin: 50% 0;
-  -moz-transform: perspective(200px) rotateX(180deg);
-  -ms-transform: perspective(200px) rotateX(180deg);
-  -webkit-transform: perspective(200px) rotateX(180deg);
-  transform: perspective(200px) rotateX(180deg);
-  -moz-border-radius-bottomleft: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  -moz-border-radius-bottomright: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-.countdown .figure .top-back span {
-  position: absolute;
-  top: -100%;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-    </style>
+    <!-- dark CSS -->
+    <link rel="stylesheet" href="assets/css/dark.css">
 </head>
 
-<body>
-    <div class="wrap">  
-  <h1>Draft <strong>Countdown</strong></h1>
+<body class="dark-mode">
+    <!-- CURSOR ANIMATION -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-  <div class="countdown">
-    <div class="bloc-time hours" data-init-value="24">
-      <span class="count-title">Hours</span>
+    <!-- HEADER SECTION START -->
+    <header class="nk-header to-be-fixed">
+        <div class="container">
+            <div class="nk-header__row align-items-center">
+                <div class="nk-header__logo-container">
+                    <a href="index.html"><img src="assets/img/logo-light.png" alt="logo" class="logo"></a>
+                </div>
 
-      <div class="figure hours hours-1">
-        <span class="top">2</span>
-        <span class="top-back">
-          <span>2</span>
-        </span>
-        <span class="bottom">2</span>
-        <span class="bottom-back">
-          <span>2</span>
-        </span>
-      </div>
+                <div class="nk-header-offcanvas">
+                    <div class="nk-header-offcanvas__heading d-flex d-lg-none">
+                        <a href="index.html">
+                            <img src="assets/img/logo-light.png" alt="logo" class="logo">
+                        </a>
+                        <button class="nk-def-btn nk-mobile-menu close"><i class="fa-regular fa-xmark p-0"></i></button>
+                    </div>
 
-      <div class="figure hours hours-2">
-        <span class="top">4</span>
-        <span class="top-back">
-          <span>4</span>
-        </span>
-        <span class="bottom">4</span>
-        <span class="bottom-back">
-          <span>4</span>
-        </span>
-      </div>
+                    <!-- nav menu -->
+                    <div class="nk-header__nav">
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="about.html">About</a>
+                            </li>
+                            <li>
+                                <a href="service.html">Service</a>
+                            </li>
+                            <li>
+                                <a href="portfolio.html">Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="nk-header__btns">
+                    <div class="nav_social">
+                        <a href="https://www.instagram.com/muhammad_asim_dev?igsh=MTAxcXdjMnpxemNtYw==" target="_blank" class="nk-def-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/asim0248" target="_blank" class="nk-def-btn"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.hackerrank.com/profile/asimsaeed0428" target="_blank" class="nk-def-btn"><i class="fa-brands fa-hackerrank"></i></a>
+                    </div>
+                    <button class="nk-def-btn nk-mobile-menu open d-inline-block d-lg-none"><i class="fa-regular fa-bars p-0"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER SECTION END -->
+    <div class="whats-float">
+        <a href="https://wa.me/+923457517656"
+           target="_blank">
+            <i class="fab fa-whatsapp"></i><span>WhatsApp<br><small>+92 345 7517656</small></span>
+        </a>
     </div>
+    <main>
+        <!-- BANNER-SECTION START -->
+        <section class="nk-banner">
+            <div class="container">
+                <h1 class="nk-banner__title text-animate">Hello, <img src="assets/img/banner-emoji.png" alt="emoji"> i am Asim, Front-End & WordPress <span class="colored">Developer</span></h1>
 
-    <div class="bloc-time min" data-init-value="0">
-      <span class="count-title">Minutes</span>
+                <div class="row g-3">
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="nk-banner__links text-end">
+                            <a href="#about" class="nk-banner__link" data-sal="slide-up">
+                                <span class="main-icon"><img src="assets/img/banner-link-1.png" alt="icon"></span>
+                                <span class="link-txt">About Me</span>
+                                <span class="arrow-icon"><img src="assets/img/banner-link-arrow-light.png" alt="icon"></span>
+                            </a>
 
-      <div class="figure min min-1">
-        <span class="top">0</span>
-        <span class="top-back">
-          <span>0</span>
-        </span>
-        <span class="bottom">0</span>
-        <span class="bottom-back">
-          <span>0</span>
-        </span>        
-      </div>
+                            <a href="https://drive.google.com/file/d/1u7ftOL5pfN7_0giBP9n694yMhhB4Cemw/view?usp=drive_link" target="_blank" class="nk-banner__link" data-sal="slide-up" data-sal-delay="200">
+                                <span class="main-icon"><img src="assets/img/banner-link-2.png" alt="icon"></span>
+                                <span class="link-txt">Resume</span>
+                                <span class="arrow-icon"><img src="assets/img/banner-link-arrow-light.png" alt="icon"></span>
+                            </a>
 
-      <div class="figure min min-2">
-       <span class="top">0</span>
-        <span class="top-back">
-          <span>0</span>
-        </span>
-        <span class="bottom">0</span>
-        <span class="bottom-back">
-          <span>0</span>
-        </span>
-      </div>
-    </div>
+                            <a href="#works" class="nk-banner__link" data-sal="slide-up" data-sal-delay="400">
+                                <span class="main-icon"><img src="assets/img/banner-link-3.png" alt="icon"></span>
+                                <span class="link-txt">My Works</span>
+                                <span class="arrow-icon"><img src="assets/img/banner-link-arrow-light.png" alt="icon"></span>
+                            </a>
+                        </div>
+                    </div>
 
-    <div class="bloc-time sec" data-init-value="0">
-      <span class="count-title">Seconds</span>
+                    <div class="col-lg-6 col-md-4 order-2 order-md-1">
+                        <div class="nk-banner__img">
+                            <img src="assets/img/banner-img.png" alt="Banner Image">
 
-        <div class="figure sec sec-1">
-        <span class="top">0</span>
-        <span class="top-back">
-          <span>0</span>
-        </span>
-        <span class="bottom">0</span>
-        <span class="bottom-back">
-          <span>0</span>
-        </span>          
-      </div>
+                            <div class="vectors">
+                                <img src="assets/img/banner-vector-1.png" alt="vector">
+                                <img src="assets/img/banner-vector-3.png" alt="vector">
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="figure sec sec-2">
-        <span class="top">0</span>
-        <span class="top-back">
-          <span>0</span>
-        </span>
-        <span class="bottom">0</span>
-        <span class="bottom-back">
-          <span>0</span>
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-    <script>
-        // Create Countdown
-var Countdown = {
-  
-  // Backbone-like structure
-  $el: $('.countdown'),
-  
-  // Params
-  countdown_interval: null,
-  total_seconds     : 0,
-  
-  // Initialize the countdown  
-  init: function() {
-    
-    // DOM
-    this.$ = {
-      hours  : this.$el.find('.bloc-time.hours .figure'),
-      minutes: this.$el.find('.bloc-time.min .figure'),
-      seconds: this.$el.find('.bloc-time.sec .figure')
-    };
+                    <div class="col-lg-3 col-md-4 col-6 order-1 order-md-2">
+                        <div class="nk-banner__links">
+                            <a href="contact-dark.html" class="nk-banner__link" data-sal="slide-up">
+                                <span class="main-icon"><img src="assets/img/banner-link-4.png" alt="icon"></span>
+                                <span class="link-txt">Message</span>
+                                <span class="arrow-icon"><img src="assets/img/banner-link-arrow-light.png" alt="icon"></span>
+                            </a>
 
-    // Init countdown values
-    this.values = {
-        hours  : this.$.hours.parent().attr('data-init-value'),
-        minutes: this.$.minutes.parent().attr('data-init-value'),
-        seconds: this.$.seconds.parent().attr('data-init-value'),
-    };
-    
-    // Initialize total seconds
-    this.total_seconds = this.values.hours * 60 * 60 + (this.values.minutes * 60) + this.values.seconds;
+                            <a href="https://www.linkedin.com/in/theasimsaeed/" target="_blank" class="nk-banner__link" data-sal="slide-up" data-sal-delay="200">
+                                <span class="main-icon"><img src="assets/img/banner-link-5.png" alt="icon"></span>
+                                <span class="link-txt">LinkedIn</span>
+                                <span class="arrow-icon"><img src="assets/img/banner-link-arrow-light.png" alt="icon"></span>
+                            </a>
 
-    // Animate countdown to the end 
-    this.count();    
-  },
-  
-  count: function() {
-    
-    var that    = this,
-        $hour_1 = this.$.hours.eq(0),
-        $hour_2 = this.$.hours.eq(1),
-        $min_1  = this.$.minutes.eq(0),
-        $min_2  = this.$.minutes.eq(1),
-        $sec_1  = this.$.seconds.eq(0),
-        $sec_2  = this.$.seconds.eq(1);
-    
-        this.countdown_interval = setInterval(function() {
+                            <a href="https://www.facebook.com/profile.php?id=61555302296597&mibextid=ZbWKwL" target="_blank" class="nk-banner__link" data-sal="slide-up" data-sal-delay="400">
+                                <span class="main-icon"><img src="assets/img/banner-link-6.png" alt="icon"></span>
+                                <span class="link-txt">Facebook</span>
+                                <span class="arrow-icon"><img src="assets/img/banner-link-arrow-light.png" alt="icon"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        if(that.total_seconds > 0) {
+            <!-- stroke shapes -->
+            <div class="nk-banner__shapes">
+                <img src="assets/img/banner-shape-stroke-light.png" alt="stroke shape" data-sal="slide-right">
+                <img src="assets/img/banner-shape-stroke-light.png" alt="stroke shape" data-sal="slide-right">
+            </div>
 
-            --that.values.seconds;              
+            <!-- ticker text -->
+            <div class="tickers">
+                <div class="ticker ticker-1 splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <h4 class="splide__slide">6+ Worldwide languages</h4>
+                            <h4 class="splide__slide">24+ Website Completed</h4>
+                        </div>
+                    </div>
+                </div>
 
-            if(that.values.minutes >= 0 && that.values.seconds < 0) {
+                <div class="ticker ticker-2 splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <h4 class="splide__slide">Website Design</h4>
+                            <h4 class="splide__slide">Front End Development</h4>
+                            <h4 class="splide__slide">WordPress Development</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- BANNER-SECTION END -->
 
-                that.values.seconds = 59;
-                --that.values.minutes;
-            }
 
-            if(that.values.hours >= 0 && that.values.minutes < 0) {
+        <!-- ABOUT SECTION START -->
+        <div class="container">
+            <section class="nk-about" id="about" data-sal="slide-up">
+                <div class="nk-section__heading">
+                    <h6 class="nk-section__sub-title text-animate">About Me</h6>
+                    <h2 class="nk-section__title text-animate">Elevating brands through code, design, and user delight.</h2>
+                </div>
 
-                that.values.minutes = 59;
-                --that.values.hours;
-            }
+                <div class="nk-about-txt">
+                    <div class="nk-about-txt__left">
+                        <h3 class="nk-about-txt__title text-animate">Hello, I am Asim Saeed</h3>
+                        <p class="nk-about-txt__descr" data-sal="slide-up">A passionate front-end and WordPress developer with a knack for turning ideas into interactive and visually appealing websites. With a strong foundation in the latest web technologies and a commitment to staying ahead of industry trends, I take pride in delivering seamless digital experiences.</p>
+                        <div class="nk-about-txt__actions" data-sal="slide-up" data-sal-delay="200">
+                            <a href="contact.html" class="nk-def-btn">Conatct Me</a>
+                            <!-- <div class="nk-socials">
+                                <a href="#">FB</a>
+                                <a href="#">TW</a>
+                                <a href="#">LI</a>
+                                <a href="#">BE</a>
+                            </div> -->
+                        </div>
+                    </div>
 
-            // Update DOM values
-            // Hours
-            that.checkHour(that.values.hours, $hour_1, $hour_2);
+                    <div class="nk-about-txt__right">
+                        <div class="nk-about-highlight">
+                            <h3 class="number">02</h3>
+                            <h4 class="title text-animate">Years of Experiance</h4>
+                        </div>
+                    </div>
+                </div>
 
-            // Minutes
-            that.checkHour(that.values.minutes, $min_1, $min_2);
+                <div class="nk-about__infos">
+                    <div class="row justify-content-center gy-4 row-cols-xl-4 row-cols-lg-4 row-cols-md-2 row-cols-2 row-cols-xxs-1">
+                        <div class="col" data-sal="slide-up" data-sal-delay="200">
+                            <div class="nk-about-info">
+                                <h5 class="nk-about-info__title">Email :</h5>
+                                <p class="nk-about-info__value"><a href="mailto:asim24285@gmail.com">asim24285@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="col" data-sal="slide-up" data-sal-delay="400">
+                            <div class="nk-about-info">
+                                <h5 class="nk-about-info__title">Phone :</h5>
+                                <p class="nk-about-info__value"><a href="tel:+923457517656">+92 345 7517656</a></p>
+                            </div>
+                        </div>
+                        <div class="col" data-sal="slide-up" data-sal-delay="600">
+                            <div class="nk-about-info">
+                                <h5 class="nk-about-info__title">Skype :</h5>
+                                <p class="nk-about-info__value"><a href="https://join.skype.com/invite/yal9Exa7jRTr" target="_blank">Muhammad Asim</a></p>
+                            </div>
+                        </div>
+                        <div class="col" data-sal="slide-up" data-sal-delay="800">
+                            <div class="nk-about-info">
+                                <h5 class="nk-about-info__title">Address :</h5>
+                                <p class="nk-about-info__value">Lahore, Punjab Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- ABOUT SECTION END -->
 
-            // Seconds
-            that.checkHour(that.values.seconds, $sec_1, $sec_2);
+        <!-- EXPERIENCE SECTION START -->
+        <section class="nk-experiences nk-section-spacing" data-sal="slide-up">
+            <div class="container">
+                <div class="nk-section__heading">
+                    <h6 class="nk-section__sub-title text-animate">Servives and Skills</h6>
+                    <h2 class="nk-section__title text-animate">I craft wonderful digital experiences for brands</h2>
+                </div>
 
-            --that.total_seconds;
-        }
-        else {
-            clearInterval(that.countdown_interval);
-        }
-    }, 1000);    
-  },
-  
-  animateFigure: function($el, value) {
-    
-     var that         = this,
-         $top         = $el.find('.top'),
-         $bottom      = $el.find('.bottom'),
-         $back_top    = $el.find('.top-back'),
-         $back_bottom = $el.find('.bottom-back');
+                <div class="nk-skills">
+                    <div class="row g-xl-4 g-3 row-cols-sm-4 row-cols-2">
+                        <div class="col" data-sal="slide-up">
+                            <div class="nk-skill">
+                                <div class="nk-skill__img">
+                                    <img src="assets/img/html.jpg" alt="skill logo">
+                                </div>
 
-    // Before we begin, change the back value
-    $back_top.find('span').html(value);
+                                <div class="nk-skill__txt">
+                                    <h5 class="nk-skill__title">Html</h5>
+                                    <h6 class="nk-skill__percent" data-value="80">80%</h6>
+                                </div>
+                            </div>
+                        </div>
 
-    // Also change the back bottom value
-    $back_bottom.find('span').html(value);
+                        <div class="col" data-sal="slide-up" data-sal-delay="200">
+                            <div class="nk-skill">
+                                <div class="nk-skill__img">
+                                    <img src="assets/img/css.png" alt="skill logo">
+                                </div>
 
-    // Then animate
-    TweenMax.to($top, 0.8, {
-        rotationX           : '-180deg',
-        transformPerspective: 300,
-        ease                : Quart.easeOut,
-        onComplete          : function() {
+                                <div class="nk-skill__txt">
+                                    <h5 class="nk-skill__title">Css</h5>
+                                    <h6 class="nk-skill__percent" data-value="80">80%</h6>
+                                </div>
+                            </div>
+                        </div>
 
-            $top.html(value);
+                        <div class="col" data-sal="slide-up" data-sal-delay="400">
+                            <div class="nk-skill">
+                                <div class="nk-skill__img">
+                                    <img src="assets/img/js.png" alt="skill logo">
+                                </div>
 
-            $bottom.html(value);
+                                <div class="nk-skill__txt">
+                                    <h5 class="nk-skill__title">JavaScript</h5>
+                                    <h6 class="nk-skill__percent" data-value="40">40%</h6>
+                                </div>
+                            </div>
+                        </div>
 
-            TweenMax.set($top, { rotationX: 0 });
-        }
-    });
+                        <div class="col" data-sal="slide-up" data-sal-delay="600">
+                            <div class="nk-skill">
+                                <div class="nk-skill__img">
+                                    <img src="assets/img/wordPress-1.png" alt="skill logo">
+                                </div>
 
-    TweenMax.to($back_top, 0.8, { 
-        rotationX           : 0,
-        transformPerspective: 300,
-        ease                : Quart.easeOut, 
-        clearProps          : 'all' 
-    });    
-  },
-  
-  checkHour: function(value, $el_1, $el_2) {
-    
-    var val_1       = value.toString().charAt(0),
-        val_2       = value.toString().charAt(1),
-        fig_1_value = $el_1.find('.top').html(),
-        fig_2_value = $el_2.find('.top').html();
+                                <div class="nk-skill__txt">
+                                    <h5 class="nk-skill__title">WordPress</h5>
+                                    <h6 class="nk-skill__percent" data-value="70">70%</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    if(value >= 10) {
+                <div class="row gy-4 nk-experiences-row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" data-sal="slide-up">
+                        <div class="nk-infos">
+                            <div class="nk-info-head">
+                                <div class="nk-serv-icon">
+                                    <img src="./assets/img/sbig4.png" alt="">
+                                </div>
+                                <h4>Front-End<br> <span>Development</span></h4>
+                                <div class="nk-img-2">
+                                    <img src="./assets/img/front-icon.png" alt="">
+                                </div>
+                                <p>
+                                    Crafting dynamic and intuitive user interfaces with cutting-edge front-end
+                                     technologies. Elevate your website's appearance and functionality for
+                                      optimal user engagement.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" data-sal="slide-up">
+                        <div class="nk-infos">
+                            <div class="nk-info-head">
+                                <div class="nk-serv-icon">
+                                    <img src="./assets/img/sbig4.png" alt="">
+                                </div>
+                                <h4>WordPress Theme<br> <span>Development</span></h4>
+                                <div class="nk-img-2">
+                                    <img src="./assets/img/wordpress-icon.png" alt="">
+                                </div>
+                                <p>
+                                    "Crafting visually stunning and functionally robust WordPress themes tailored to your brand. From elegant design to seamless user experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center" data-sal="slide-up">
+                        <a href="service.html" class="nk-def-btn">see all services<i class="fa-regular fa-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- EXPERIENCE SECTION END -->
 
-        // Animate only if the figure has changed
-        if(fig_1_value !== val_1) this.animateFigure($el_1, val_1);
-        if(fig_2_value !== val_2) this.animateFigure($el_2, val_2);
-    }
-    else {
 
-        // If we are under 10, replace first figure with 0
-        if(fig_1_value !== '0') this.animateFigure($el_1, 0);
-        if(fig_2_value !== val_1) this.animateFigure($el_2, val_1);
-    }    
-  }
-};
+        <!-- PORTFOLIO SECTION START -->
+        <section id="works" class="nk-portfolios nk-section-spacing" data-sal="slide-up">
+            <div class="container">
+                <div class="nk-section__heading">
+                    <h6 class="nk-section__sub-title text-animate">Complete portfolio</h6>
+                    <h2 class="nk-section__title text-animate">Take a look at some of my featured projects.</h2>
+                </div>
 
-// Let's go !
-Countdown.init();
-    </script>
+                <div class="nk-portfolios-container">
+                    <div class="nk-portfolio">
+                        <div class="nk-portfolio__img">
+                            <a href="https://vistawall.ae/" target="_blank">
+                                <img src="assets/img/portfolio-1.jpg" alt="Portfolio Image">
+                            </a>
+                        </div>
+                        <div class="nk-portfolio__txt">
+                            <h6 class="nk-portfolio__category text-animate">FRONT-END</h6>
+                            <h4 class="nk-portfolio__title text-animate"><a href="https://vistawall.ae/" target="_blank">Vistawall International</a></h4>
+                        </div>
+                    </div>
+                    <div class="nk-portfolio">
+                        <div class="nk-portfolio__img">
+                            <a href="portfolio-details-dark.html">
+                                <img src="assets/img/portfolio-2.jpg" alt="Portfolio Image">
+                            </a>
+                        </div>
+                        <div class="nk-portfolio__txt">
+                            <h6 class="nk-portfolio__category text-animate">WORDPRESS</h6>
+                            <h4 class="nk-portfolio__title text-animate"><a href="https://www.hiradigitalsolutions.com/" target="_blank">Hira Digital Solutions</a></h4>
+                        </div>
+                    </div>
+                    <div class="nk-portfolio">
+                        <div class="nk-portfolio__img">
+                            <a href="https://www.asfarhealthcare.com/" target="_blank">
+                                <img src="assets/img/portfolio-3.jpg" alt="Portfolio Image">
+                            </a>
+                        </div>
+                        <div class="nk-portfolio__txt">
+                            <h6 class="nk-portfolio__category text-animate">FRONT-END</h6>
+                            <h4 class="nk-portfolio__title text-animate"><a href="https://www.asfarhealthcare.com/" target="_blank">Asfar Health Care</a></h4>
+                        </div>
+                    </div>
+                    <div class="nk-portfolio">
+                        <div class="nk-portfolio__img">
+                            <a href="https://sasapackaging.com/" target="_blank">
+                                <img src="assets/img/portfolio-4.jpg" alt="Portfolio Image">
+                            </a>
+                        </div>
+                        <div class="nk-portfolio__txt">
+                            <h6 class="nk-portfolio__category text-animate">FRONT-END</h6>
+                            <h4 class="nk-portfolio__title text-animate"><a href="https://sasapackaging.com/" target="_blank">Sasa Packaging</a></h4>
+                        </div>
+                    </div>
+                    <div class="nk-portfolio">
+                        <div class="nk-portfolio__img">
+                            <a href="https://www.highgradesupp.com/" target="_blank">
+                                <img src="assets/img/portfolio-7.jpg" alt="Portfolio Image">
+                            </a>
+                        </div>
+                        <div class="nk-portfolio__txt">
+                            <h6 class="nk-portfolio__category text-animate">FRONT-END</h6>
+                            <h4 class="nk-portfolio__title text-animate"><a href="https://www.highgradesupp.com/" target="_blank">High GradesUpp</a></h4>
+                        </div>
+                    </div>
+                    <div class="nk-portfolio">
+                        <div class="nk-portfolio__img">
+                            <a href="portfolio-details-dark.html">
+                                <img src="assets/img/portfolio-6.jpg" alt="Portfolio Image">
+                            </a>
+                        </div>
+                        <div class="nk-portfolio__txt">
+                            <h6 class="nk-portfolio__category text-animate">DESIGNING</h6>
+                            <h4 class="nk-portfolio__title text-animate"><a href="portfolio-details-dark.html">UX Consulting</a></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center" data-sal="slide-up">
+                    <a href="portfolio.html" class="nk-def-btn">see all portfolios <i class="fa-regular fa-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- PORTFOLIO SECTION END -->
+
+        <!-- CTA SECTION START -->
+        <section class="nk-cta pt-120">
+            <div class="nk-cta-top" data-sal="slide-up">
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-lg-6">
+                            <div class="nk-cta-top__txt">
+                                <div class="nk-section__heading nk-cta__heading">
+                                    <h6 class="nk-section__sub-title text-animate">What We Do?</h6>
+                                    <h2 class="nk-section__title text-animate">Hi, I am a expert Front-End and WordPress Developer </h2>
+                                </div>
+                                <p class="nk-about-txt__descr" data-sal="slide-up">I am a dynamic Front-End and WordPress Developer with a keen eye for detail and a passion for crafting engaging user experiences. Through responsive design, precise code, and innovative solutions, I bring digital visions to life. Let's collaborate to elevate your online presence and create impactful web solutions.</p>
+                                <div class="nk-about-txt__actions nk-cta-top__actions" data-sal="slide-up">
+                                    <a href="contact.html" class="nk-def-btn">Hire Me Now</a>
+                                </div>
+
+                                <div class="hand">
+                                    <img src="assets/img/cta-hand.png" alt="hand icon">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="nk-cta-top__img">
+                                <img src="assets/img/cta-img.png" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA SECTION END -->
+
+
+        <!-- CONTACT SECTION START -->
+        <section class="nk-contact" id="contact" data-sal="slide-up">
+            <div class="container position-relative">
+                <div class="nk-contact-bg">
+                    <div class="row gy-5 justify-content-between">
+                        <div class="col-lg-6">
+                            <div class="nk-contact__txt">
+                                <div class="nk-section__heading w-100 text-start">
+                                    <h6 class="nk-section__sub-title text-animate">Conatct Me</h6>
+                                    <h2 class="nk-section__title text-animate">Let's get in touch</h2>
+                                </div>
+
+                                <div class="nk-contact__infos">
+                                    <div class="nk-contact-info" data-sal="slide-up">
+                                        <div class="nk-contact-info__icon">
+                                            <i class="fa-regular fa-phone"></i>
+                                        </div>
+
+                                        <div class="nk-contact-info__txt">
+                                            <h6 class="nk-contact-info__title">phone</h6>
+                                            <h5 class="nk-contact-info__value"><a href="tel:+923457517656">+92 345 7517656</a></h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="nk-contact-info" data-sal="slide-up">
+                                        <div class="nk-contact-info__icon">
+                                            <i class="fa-regular fa-envelope"></i>
+                                        </div>
+
+                                        <div class="nk-contact-info__txt">
+                                            <h6 class="nk-contact-info__title">email</h6>
+                                            <h5 class="nk-contact-info__value"><a href="mailto:asim24285@gmail.com">asim24285@gmail.com</a></h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="nk-contact-info" data-sal="slide-up">
+                                        <div class="nk-contact-info__icon">
+                                            <i class="fa-location-dot fa-regular"></i>
+                                        </div>
+
+                                        <div class="nk-contact-info__txt">
+                                            <h6 class="nk-contact-info__title">location</h6>
+                                            <h5 class="nk-contact-info__value">Lahore, Punjab Pakistan</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="nk-contact__links">
+                                    <a href="#" class="nk-banner__link" data-sal="slide-up">
+                                        <span class="main-icon"><img src="assets/img/banner-link-6.png" alt="icon"></span>
+                                        <span class="link-txt">Facebook</span>
+                                        <span class="arrow-icon"><img src="assets/img/banner-link-arrow-light.png" alt="icon"></span>
+                                    </a>
+
+                                    <a href="#" class="nk-banner__link" data-sal="slide-up" data-sal-delay="200">
+                                        <span class="main-icon"><img src="assets/img/banner-link-5.png" alt="icon"></span>
+                                        <span class="link-txt">LinkedIn</span>
+                                        <span class="arrow-icon"><img src="assets/img/banner-link-arrow-light.png" alt="icon"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="nk-contact__form-area">
+                                <h4 class="nk-pricing-pack__title">Fill The Form</h4>
+
+                                <form action="https://formspree.io/f/xnqepddy" method="POST" class="nk-contact-form">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12">
+                                            <input type="text" name="conatct-name" id="nk-contact-form-name" placeholder="Your Full Name" required="required">
+                                        </div>
+                                        <div class="col-lg-6 col-md-12">
+                                            <input type="email" name="conatct-email" id="nk-contact-form-email" placeholder="Email Address" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12">
+                                            <input type="tel" name="conatct-name" id="nk-contact-form-name" placeholder="Phone NUmber" required="required">
+                                        </div>
+                                        <div class="col-lg-6 col-md-12">
+                                            <input type="text" name="conatct-name" id="nk-contact-form-name" placeholder="Subject ">
+                                        </div>
+                                    </div>
+                                    <textarea name="conatct-message" id="nk-contact-form-message" rows="10" placeholder="Your Message" required="required"></textarea>
+                                    <button type="submit" class="nk-def-btn">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nk-contact__circles">
+                    <img src="assets/img/contact-vector-1.png" alt="vector">
+                    <img src="assets/img/contact-vector-1.png" alt="vector">
+                </div>
+            </div>
+
+            <div class="nk-contact__wave">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1920px" height="533px" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g>
+                        <path fill="#1463ae" d="M -0.5,-0.5 C 0.833333,-0.5 2.16667,-0.5 3.5,-0.5C 233.016,62.1211 466.849,95.1211 705,98.5C 750.561,98.1639 796.061,96.3306 841.5,93C 965.86,79.2467 1090.19,65.2467 1214.5,51C 1305.59,41.4319 1396.92,36.2652 1488.5,35.5C 1572.3,34.3442 1655.3,41.8442 1737.5,58C 1802.39,71.0108 1863.05,94.5108 1919.5,128.5C 1919.5,263.167 1919.5,397.833 1919.5,532.5C 1279.5,532.5 639.5,532.5 -0.5,532.5C -0.5,354.833 -0.5,177.167 -0.5,-0.5 Z" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+        <!-- CONTACT SECTION END -->
+    </main>
+
+    <!-- FOOTER SECTION START -->
+    <footer class="nk-footer">
+        <div class="container">
+            <div class="row gx-0 gy-3 align-items-center">
+                <div class="col-lg-6 col-md-7 col-9">
+                    <p class="nk-footer__copyright-txt mb-0">Copyright &copy; 2024 Asim Saeed. All rights reserved.</p>
+                </div>
+
+                <div class="col-lg-6 col-md-5 col-3">
+                    <div class="nk-footer__right">
+                        <button class="nk-back-to-top"><i class="fa-arrow-up fa-solid"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END -->
+
+    <!-- JS Files -->
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/gsap/gsap.min.js"></script>
+    <script src="assets/vendor/splide/splide.min.js"></script>
+    <script src="assets/vendor/splide/splide-extension-auto-scroll.min.js"></script>
+    <script src="assets/vendor/mixitup/mixitup.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/portfolio-mixitup.js"></script>
+    <script src="assets/js/ticker.js"></script>
 </body>
+
+
 </html>
